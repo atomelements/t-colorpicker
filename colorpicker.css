@@ -11,13 +11,13 @@ License: MIT
     position: relative;
     width: 100%;/* 
     min-width: 250px; */
-  font-family: var(--primary-font-family);
+  font-family: var(--primary-font-family, 'Roboto');
 }
 :host([label]) label{
-    color: var(--form-label-color);
-    font-size: var(--form-label-size);
+    color: var(--form-label-color, #777);
+    font-size: var(--form-label-size, 12px);
     display: block;
-    margin-bottom: var(--form-label-margin);
+    margin-bottom: var(--form-label-margin,10px);
 }
 :host([no-label-float]) label{
     position: absolute;
@@ -38,10 +38,20 @@ License: MIT
     color: #777;
     top: 50%;
     right: 0;
+    height: 100%;
+    box-sizing: border-box;
     transform: translateY(-50%);
     background-color: #eee;
     font-size: 16px;
     padding: 10px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
 :host #colorContainer ::content .sp-container {
@@ -420,7 +430,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 :host ::content .sp-preview {
     position:relative;
     width:100%;
-    height: var(--color-picker-height);
+    height: var(--color-picker-height,42px);
     z-index: 0;
     border-radius: var(--standard-border-radius);
     overflow:hidden;
